@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Travel Companion</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Smart Travel Companion</h1>
+        <p>Get personalized travel recommendations for any destination</p>
+
+        <div class="search-box">
+            <input type="text" id="destination" placeholder="Where would you like to go?" required>
+            <textarea id="preferences" placeholder="Any special preferences? (e.g., budget, interests, dietary restrictions)"></textarea>
+            <button id="search-btn">Get Recommendations</button>
+        </div>
+
+        <div id="loading" class="hidden">
+            <div class="spinner"></div>
+            <p>Finding the best recommendations for you...</p>
+        </div>
+
+        <div id="results" class="hidden">
+            <h2>Your Travel Recommendations</h2>
+            <div id="recommendations"></div>
+        </div>
+
+        <div id="error" class="hidden">
+            <p>Something went wrong. Please try again.</p> <!-- Easily updated error message -->
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
