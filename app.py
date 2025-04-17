@@ -6,7 +6,6 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
 
-# Configure OpenAI API - you should set this as an environment variable
 openai.api_key = os.getenv('OPENAI_API_KEY')
 
 
@@ -21,7 +20,6 @@ def get_recommendations():
     destination = data.get('destination')
     preferences = data.get('preferences', '')
 
-    # Validate input
     if not destination:
         return jsonify({'error': 'Destination is required and cannot be empty'}), 400
 
@@ -53,5 +51,5 @@ def get_recommendations():
 
 if __name__ == '__main__':
     print("Starting Flask app with debug turned on...")
-    print("Ensure API Key is loaded. Current API Key:", openai.api_key)  # For initial debugging
+    print("Ensure API Key is loaded. Current API Key:", openai.api_key)  # debugging
     app.run(debug=True)
