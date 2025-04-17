@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const destination = destinationInput.value.trim();
 
         if (!destination) {
-            alert('Please enter a destination');  // Improved user validation
+            alert('Please enter a destination'); // Improved user validation
             return;
         }
 
@@ -34,20 +34,18 @@ document.addEventListener('DOMContentLoaded', function() {
             })
         })
             .then(response => {
-                console.log("HTTP Response:", response);  // Log full HTTP response
+                console.log("HTTP Response:", response); // Log full HTTP response
                 return response.json();
             })
             .then(data => {
-                loadingDiv.classList.add('hidden');  // Hide loading animation
+                loadingDiv.classList.add('hidden'); // Hide loading animation
 
                 if (data.error) {
                     errorDiv.classList.remove('hidden');
-                    errorDiv.querySelector('p').textContent = data.error;  // Display backend error to user
+                    errorDiv.querySelector('p').textContent = data.error;
                     console.error("Error:", data.error);
                 } else {
-                    // Format the recommendations with proper line breaks
-                    const formattedRecommendations = data.recommendations.replace(/\n/g, '<br>');
-                    recommendationsDiv.innerHTML = formattedRecommendations;
+                    recommendationsDiv.innerHTML = data.recommendations; // Use clean pre-formatted HTML
                     resultsDiv.classList.remove('hidden');
                 }
             })
