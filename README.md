@@ -15,23 +15,17 @@ A Flask-based web app that generates travel recommendations using OpenAI's GPT A
 
 ## Setup Instructions
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/smart-travel-companion.git
-   cd smart-travel-companion
-   ```
-
-2. Install dependencies:
+1. Install dependencies:
    ```bash
    pip install -r requirements.txt
    ```
 
-3. Run the app:
+2. Run the app:
    ```bash
    python app.py
    ```
 
-4. Open the app in your browser:
+3. Open the app in your browser:
    - Go to: `http://127.0.0.1:5000`.
 
 ## File Structure
