@@ -25,7 +25,7 @@ def get_recommendations():
 
     try:
         # Generate travel recommendations using GPT
-        response = openai.ChatCompletion.create(
+        response = openai.chat.completions.create(
             model="gpt-3.5-turbo",
             messages=[
                 {"role": "system",
