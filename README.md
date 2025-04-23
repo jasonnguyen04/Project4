@@ -1,18 +1,42 @@
-# Project4
-Names of team members (up to 3 people).
-Jason Nguyen
-Amadea Koleci
-Mira Kunitzer
+# Smart Travel Companion
 
-The topic with clear statement on whether research or application.
-Topic: Smart Travel Companion
-Type: Application
-We will develop a smart travel assistant that integrates GPT power to provide personalized travel recommendations. Users can enter a location and receive curated suggestions for things to do, places to eat, and sights to see.
+A Flask-based web app that generates travel recommendations using OpenAI's GPT API.
 
-Problem statement if research project, or system statement if application project.
-The system will be a application that allows users to input a destination. It will then return a list of travel recommendations, including attractions, restaurants, and events The application will integrate the OpenAI GPT API.
+## Features
+  Get personalized travel recommendations such as:
+  - Things to do
+  - Places to eat
+  - Sights to see
+  - Clean and responsive web interface.
 
-The core functionality will include:
-User input of a destination.
-GPT-powered processing to understand the user's preferences.
-A clean UI to display results with links, descriptions, and (maybe) maps.
+## Requirements
+- Python 3.9 or above
+- Internet connection
+
+## Setup Instructions
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/smart-travel-companion.git
+   cd smart-travel-companion
+   ```
+
+2. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. Run the app:
+   ```bash
+   python app.py
+   ```
+
+4. Open the app in your browser:
+   - Go to: `http://127.0.0.1:5000`.
+
+## File Structure
+- `app.py` - The main Flask server application.
+- `templates/index.html` - The frontend HTML file.
+- `static/` - Includes the CSS and JavaScript files.
+- `requirements.txt` - Python package dependencies.
+- `.env.example` - Template for environment variables.
