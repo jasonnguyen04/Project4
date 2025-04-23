@@ -6,6 +6,7 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
 
+# Configure OpenAI API - you should set this as an environment variable
 openai.api_key = os.getenv('OPENAI_API_KEY')
 
 
@@ -20,12 +21,13 @@ def get_recommendations():
     destination = data.get('destination')
     preferences = data.get('preferences', '')
 
+    # Validate input
     if not destination:
         return jsonify({'error': 'Destination is required and cannot be empty'}), 400
 
     try:
         # Generate travel recommendations using GPT
-        response = openai.chat.completions.create(
+        response = openai.ChatCompletion.create(
             model="gpt-3.5-turbo",
             messages=[
                 {"role": "system",
@@ -51,5 +53,5 @@ def get_recommendations():
 
 if __name__ == '__main__':
     print("Starting Flask app with debug turned on...")
-    print("Ensure API Key is loaded. Current API Key:", openai.api_key)  # debugging
+    print("Ensure API Key is loaded. Current API Key:", openai.api_key)  # For initial debugging
     app.run(debug=True)
